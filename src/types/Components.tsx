@@ -2,7 +2,7 @@ import {TextStyle, ViewStyle} from 'react-native';
 export interface StyleTypes extends TextStyle, ViewStyle {}
 export interface ButtonPorps {
   style?: StyleTypes | StyleTypes[];
-  textStyle?: StyleTypes;
+  textStyle?: StyleTypes | StyleTypes[];
   text?: string;
   iconOnly?: boolean;
   iconName?: string;
@@ -14,6 +14,9 @@ export interface HeaderProps {
   textStyle?: StyleTypes;
   text?: string;
   leftIcon?: string;
+  rightIcon?: string;
+  rightIconStyle?: StyleTypes;
+  onPressRight?: () => void;
   onPressBack?: () => void;
 }
 export interface LoaderState {
@@ -27,4 +30,13 @@ export interface IconProps {
   name?: string;
   style?: StyleTypes;
   onPress?: () => void;
+}
+
+export interface ToastState {
+  show?: boolean;
+  msg?: string | undefined;
+}
+export interface ToastRefProps {
+  show?: (msg: string) => void;
+  hide?: () => void;
 }

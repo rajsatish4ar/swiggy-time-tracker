@@ -4,7 +4,6 @@ import {Colors} from './Colors';
 export default StyleSheet.create({
   container: {
     justifyContent: 'center',
-    backgroundColor: Colors.color_eeeeee,
     padding: 24,
     paddingTop: 8,
     alignSelf: 'center',
@@ -18,9 +17,10 @@ export default StyleSheet.create({
     backgroundColor: Colors.color_transparent80,
     padding: 24,
   },
+
   row: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  safeContainer: {flex: 1, backgroundColor: Colors.color_eeeeee},
+  safeContainer: {flex: 1},
 });

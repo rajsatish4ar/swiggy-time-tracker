@@ -1,7 +1,10 @@
 import {StyleTypes} from './Components';
 
 export interface TaskType {
+  id?: number;
   title?: string;
+  start_time?: string;
+  end_time?: string;
   tags?: string[];
 }
 export interface TaskCardType {
@@ -11,6 +14,7 @@ export interface TaskCardType {
 }
 
 export interface TagType {
+  id?: number;
   name?: string;
 }
 
@@ -23,4 +27,12 @@ export interface TagViewType {
   tagTextStyle?: StyleTypes;
   onPress?: (item?: TagType, index?: number) => void;
   onDeletePress?: (item?: TagType, index?: number) => void;
+}
+
+export interface TaskFromType {
+  title?: string;
+  startTime?: number;
+  endTime?: number;
+  tagName?: string;
+  tags?: number[] | [];
 }

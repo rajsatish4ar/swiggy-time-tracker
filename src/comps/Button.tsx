@@ -15,11 +15,17 @@ const Button = (props: ButtonPorps) => {
       style={[styles.button, {backgroundColor: colors.primary}, style]}
       activeOpacity={0.7}
       disabled={!enable}
-      onPress={onPress}>
+      onPress={() => onPress && onPress()}>
       {iconOnly ? (
-        <IconView name={iconName} style={[styles.text, textStyle]} />
+        <IconView
+          name={iconName}
+          style={[styles.text, textStyle]}
+          onPress={() => onPress && onPress()}
+        />
       ) : (
-        <Text style={[styles.text, {color: colors.text}, textStyle]}>
+        <Text
+          style={[styles.text, {color: colors.text}, textStyle]}
+          onPress={() => onPress && onPress()}>
           {text ?? 'Login'}
         </Text>
       )}

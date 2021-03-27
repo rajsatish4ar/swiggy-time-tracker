@@ -8,10 +8,12 @@ import Splash from '@screens/Splash';
 import Offline from '@screens/Offline';
 import {rootRef, loaderRef} from '@utils/Root';
 import Loader from '@comps/AppLoader';
+import AppToast from '@comps/AppToast';
 import {ApolloProvider} from '@apollo/client';
 import {graphql_client} from '../config/index';
 import AppContext, {AppProvider} from '@comps/AppProvider';
 import {DARK_THEME, LIGHT_THEME} from '@utils/Colors';
+import {toastRef} from '../utils/Root';
 const Stack = createStackNavigator();
 const getScreen = (screen: ScreenFlow) => {
   if (screen == ScreenFlow.Splash)
@@ -40,6 +42,7 @@ const RouteHome = () => {
         </AppProvider>
       </ApolloProvider>
       <Loader ref={loaderRef as any} />
+      <AppToast ref={toastRef as any} />
     </>
   );
 };
