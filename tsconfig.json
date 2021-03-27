@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src/",
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@comps/*": ["comps/*"],
+      "@assets/*": ["assets/*"],
+      "@nav/*": ["nav/*"],
+      "@screens/*": ["screens/*"],
+      "@types/*": ["types/*"],
+      "@config/*": ["config/*"],
+      "@utils": ["utils"],
+      "@comps": ["comps"],
+      "@assets": ["assets"],
+      "@nav": ["nav"],
+      "@screens": ["screens"],
+      "@types": ["types"],
+      "@config": ["config"]
+    }
+  }
+}
