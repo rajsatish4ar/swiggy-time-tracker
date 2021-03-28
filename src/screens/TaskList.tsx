@@ -33,7 +33,10 @@ const TaskList = props => {
   React.useEffect(() => {
     const data = props?.route?.params ?? {};
     //insert
-    if (data?.id && data?.isInsert) return setTaskList(list => [...list, data]);
+    if (data?.id && data?.isInsert) {
+      setTasks(list => [...list, data]);
+      return setTaskList(list => [...list, data]);
+    }
     // update
     if (data?.id && data?.isUpdate) {
       const list = [];
@@ -54,6 +57,7 @@ const TaskList = props => {
     // delet
     if (data?.id && data?.isDelete) {
       const list = taskList.filter((item, index) => item?.id !== data?.id);
+      setTasks(list);
       setTaskList(list);
     }
   }, [newlyAddedItemId]);
@@ -77,6 +81,7 @@ const TaskList = props => {
         index={index}
         onPressItem={() => {
           inputRef?.current?.clear();
+          setTasks(taskList);
           Root.navigate('TaskDetails', item);
         }}
       />
@@ -118,6 +123,7 @@ const TaskList = props => {
         textStyle={[styles.buttonText, {color: colors.text}]}
         onPress={() => {
           inputRef?.current?.clear();
+          setTasks(taskList);
           Root.navigate('TaskDetails');
         }}
       />

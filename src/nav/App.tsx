@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import TaskList from '@screens/TaskList';
+import TaskList from '@screens/TaskList1';
 import TaskDetails from '@screens/TaskDetails';
 import {screenAnim} from '@utils';
 const Stack = createStackNavigator();
